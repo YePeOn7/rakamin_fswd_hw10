@@ -1,7 +1,6 @@
 const utils = require("../utils/utils.js");
 const tableName = "movies";
 const pool = require("../config/db_config.js");
-const { Query } = require("pg");
 
 class MoviesController{
     static async findAll(req, res, next){

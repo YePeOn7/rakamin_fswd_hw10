@@ -15,7 +15,7 @@ app.get("/", async (req, res) => {
     catch(err){
         nextTick(err);
     }
-})
+});
 
 app.use(router);
 app.use(errorHandler);

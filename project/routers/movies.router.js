@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const pool = require('../config/db_config.js');
 const MovieController = require("../controllers/movies.controller.js");
 
 router.get("/", MovieController.findAll);
