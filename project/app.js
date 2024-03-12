@@ -2,8 +2,14 @@ const express = require('express')
 const path = require("path");
 const router = require("./routers");
 const errorHandler = require("./middlewares/errorHandler.js");
-
+const fs = require("fs");
 const app = express();
+
+const uploadPath = "uploads"
+
+if(!fs.existsSync(uploadPath)){
+    fs.mkdirSync(uploadPath);
+}
 
 //json body parser
 app.use(express.json());

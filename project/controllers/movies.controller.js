@@ -1,6 +1,7 @@
 const utils = require("../utils/utils.js");
 const tableName = "movies";
 const pool = require("../config/db_config.js");
+// const multer = require("multer");
 
 class MoviesController{
     static async findAll(req, res, next){
@@ -105,6 +106,11 @@ class MoviesController{
         catch(err){
             next(err);
         }
+    }
+
+    static async upload(req, res, next){
+        console.log(req.file);
+        res.status(200).send("File uploaded successfully");
     }
 }
 
