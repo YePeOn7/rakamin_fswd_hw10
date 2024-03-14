@@ -1,21 +1,14 @@
-const utils = require("../utils/utils.js");
-const tableName = "movies";
+const MoviesService = require("../services/movies.services.js");
 const pool = require("../config/db_config.js");
 // const multer = require("multer");
+
+const tableName = "movies";
 
 class MoviesController{
     static async findAll(req, res, next){
         try{
-            const pagination = await utils.pagination(req.query, tableName);
-            const result = await pool.query(`
-                SELECT * FROM ${tableName}
-                ${pagination.query}
-            `);
-
-            res.status(200).json({
-                data: result.rows,
-                pageInfo: pagination.pageInfo
-            });
+            const result = await MoviesService.findAll(req.query);
+            res.status(200).json(result);
         }
         catch(err){
             next(err);
@@ -25,11 +18,8 @@ class MoviesController{
     static async findSingle(req, res, next){
         try{
             const id = req.params.id;
-            const result = await pool.query(`
-                SELECT * FROM ${tableName}
-                WHERE id = ${id}
-            `);
-            res.status(200).json({data: result.rows});
+            const result = await MoviesService.findSingle(id);
+            res.status(200).json(result);
         }
         catch(err){
             next(err);
