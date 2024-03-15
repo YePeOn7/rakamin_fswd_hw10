@@ -1,4 +1,4 @@
-const MoviesService = require("../services/movies.services.js");
+const MoviesService = require("../services/movies.service.js");
 const pool = require("../config/db_config.js");
 // const multer = require("multer");
 
