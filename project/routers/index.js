@@ -2,6 +2,7 @@ const express = require('express');
 const router = require("express").Router();
 const moviesRouter = require("./movies.router.js");
 const usersRouter = require("./users.roter.js");
+const auth = require("../middlewares/auth.js");
 const path = require('path');
 
 router.use("/api/images", express.static(path.join(__dirname, "../uploads")))
