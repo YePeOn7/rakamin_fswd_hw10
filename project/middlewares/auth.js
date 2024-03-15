@@ -11,7 +11,7 @@ async function authenticate(req, res, next){
             if(accessToken === "null") 
             {
                 console.log("HERE");
-                throw {name: "Unauthenticated"};
+                throw {name: "unauthenticated"};
             }
 
             const user = jwt.verifyToken(accessToken);
@@ -38,11 +38,11 @@ async function authenticate(req, res, next){
                 next();
             }
             else{
-                throw {name: "Unauthenticated"};
+                throw {name: "unauthenticated"};
             }
         }
         else{
-            throw {name: "Unauthenticated"};
+            throw {name: "unauthenticated"};
         }
     }
     catch(err){

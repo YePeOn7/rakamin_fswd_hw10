@@ -6,10 +6,11 @@ const authRouter = require("./auth.router.js");
 const auth = require("../middlewares/auth.js");
 const path = require('path');
 
+router.use("/api/auth", authRouter);
+router.use(auth.authenticate);
 router.use("/api/images", express.static(path.join(__dirname, "../uploads")))
 router.use("/api/movies", moviesRouter);
 router.use("/api/users", usersRouter);
-router.use("/api/auth", authRouter);
 
 
 module.exports = router;
