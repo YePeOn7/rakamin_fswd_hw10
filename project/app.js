@@ -8,6 +8,8 @@ const app = express();
 
 const uploadPath = "uploads"
 
+
+
 if(!fs.existsSync(uploadPath)){
     fs.mkdirSync(uploadPath);
 }

@@ -8,7 +8,7 @@ class AuthService{
             if(!bodyParams.email || !bodyParams.gender || !bodyParams.password || !bodyParams.role ) throw {name: "badRequest", message: "Bad Request for Adding the User"};
 
             bodyParams.password = bcrypt.hashPassword(bodyParams.password);
-            console.log(bodyParams);
+            // console.log(bodyParams);
             const data = await AuthRepository.register(bodyParams);
             return data;
         } catch (error) {
@@ -30,10 +30,10 @@ class AuthService{
                     role: user.role,
                 });
 
-                res.status(200).json({
+                return {
                     message: "Login succesfully",
                     accessToken
-                });
+                };
             }
             else{
                 throw {name: "unauthenticated", message: "Invalid Credential"};

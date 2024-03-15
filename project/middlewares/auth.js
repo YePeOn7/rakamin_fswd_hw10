@@ -1,4 +1,4 @@
-const jwt = require("../lib/jwt.js");
+const jwt = require("../libs/jwt.js");
 const pool = require("../config/db_config.js")
 
 async function authenticate(req, res, next){
