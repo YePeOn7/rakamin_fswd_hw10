@@ -6,3 +6,5 @@ ALTER TABLE IF EXISTS users
     
 DELETE FROM movies WHERE title='test123';
 SELECT setval('movies_id_seq', (SELECT MAX(id) FROM movies));
+ALTER TABLE IF EXISTS movies  
+    ALTER COLUMN photo TYPE VARCHAR(255);

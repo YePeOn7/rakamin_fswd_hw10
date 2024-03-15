@@ -4,6 +4,7 @@ const router = require("./routers");
 const errorHandler = require("./middlewares/errorHandler.js");
 const fs = require("fs");
 const app = express();
+require("dotenv").config()
 
 const uploadPath = "uploads"
 

@@ -1,10 +1,13 @@
 function errorHandler(err, req, res, next){
     console.log(`Trigger Error:`);
     console.log(err);
-    if(err.name === "Bad Request"){
-        res.status(400).json({message: "Bad Request"});
+    if(err.name === "badRequest"){
+        res.status(400).json(err);
     }
-    else if(err.name === "Not Found"){
+    else if(err.name === "notFound"){
+        res.status(404).json(err);
+    }
+    else if(err.name === "noDataFound"){
         res.status(404).json(err);
     }
     else{
