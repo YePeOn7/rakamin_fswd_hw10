@@ -55,7 +55,7 @@ class MoviesController{
         try{
             const findQuery = `SELECT * FROM ${tableName} WHERE id=$1`;
             let result = await pool.query(findQuery, [params_.id]);
-            if(result.rowCount == 0) throw {name: "notFound", message: `data with id ${id} is not available`};
+            if(result.rowCount == 0) throw {name: "notFound", message: `data with id ${params_.id} is not available`};
     
     
             let query = `UPDATE ${tableName} SET `

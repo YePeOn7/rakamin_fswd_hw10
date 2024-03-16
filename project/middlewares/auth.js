@@ -10,7 +10,6 @@ async function authenticate(req, res, next){
             // console.log(typeof accessToken);
             if(accessToken === "null") 
             {
-                console.log("HERE");
                 throw {name: "unauthenticated"};
             }
 
@@ -51,7 +50,7 @@ async function authenticate(req, res, next){
 }
 
 async function authorization(req, res, next){
-    console.log(req.loggedUser);
+    // console.log(req.loggedUser);
     try{
         if(req.loggedUser.role === "admin") next();
         else 
