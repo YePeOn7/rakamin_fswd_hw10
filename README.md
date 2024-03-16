@@ -18,6 +18,15 @@ Otherwise, you can use pgadmin to create a **movies_db** database and restore th
 ![image](https://github.com/YePeOn7/rakamin_fswd_hw9/assets/12985183/411dfd98-68b2-41e5-a840-331009470425)
 ![image](https://github.com/YePeOn7/rakamin_fswd_hw9/assets/12985183/23781986-8f36-436c-b8bd-904d20605e9f)
 
+### Create .env file for configuration
+Please in **project** folder create a **.env** file and fill it with the following parameter. Adjust it as your DB environment
+```
+BASE_URL=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+```
+
 ### Init Project
 From the root of the repo
 ```bash
