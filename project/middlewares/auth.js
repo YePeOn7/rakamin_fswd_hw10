@@ -57,7 +57,7 @@ async function authorization(req, res, next){
         else 
         {
             console.log("Here!!!!!!");
-            throw {name: "Unauthorized"};
+            throw {name: "unauthorized", message: "The user is not authorized to perform the action"};
         }
     }
     catch(err){
