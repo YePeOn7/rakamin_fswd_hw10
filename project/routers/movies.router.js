@@ -9,6 +9,6 @@ router.use(auth.authorization);
 router.post("/", MovieController.add);
 router.put("/", MovieController.update);
 router.delete("/", MovieController.delete);
-router.post("/upload", multerMiddleware.single('image'), MovieController.upload);
+router.post("/upload", multerMiddleware.single('file'), MovieController.upload);
 
 module.exports = router;
